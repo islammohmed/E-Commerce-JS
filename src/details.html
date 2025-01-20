@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/output.css" rel="stylesheet">
+    <link href="output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="container flex-wrap  max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center  mt-8">
+        <div class="flex flex-wrap flex-1 items-stretch mx-4">
+        <div class="product-details flex-1 px-4  bg-white shadow-lg rounded-lg mt-8 my-10 ">
+       <img class="product-image w-15 h-40 object-cover rounded-t-lg text-center mx-auto" alt="image" >
+       <div class="btn flex flex-col justify-center items-center">
+        <button id="next" class="next mx-10 w-1/2 h-50 bg-teal-500 text-white font-bold py-1 px-4 rounded-lg hover:bg-teal-500  my-4 text-center" >Next</button>
+        <button id="previous" class="previous mx-10 w-1/2 h-50 bg-teal-500 text-white font-bold py-1 px-4 rounded-lg hover:bg-teal-500  my-2 text-center" >Previous</button> 
+       </div>
+   
+     
+     <p class="font-bold text-teal-500 text-xl my-7">Description</p>
+     <p class="product-description font-semibold  text-sm mt-2 "></p>
+    
+    </div>
+<!-------------------------------ADD To Card----------------->
+    <div class="Cart  flex-1 px-4   bg-white shadow-lg rounded-lg p-6 mx-9 mt-8">
+        <div class="rateReview flex ">
+        <p  id= "rate"  class="product-rating " class="font-semibold text-xs text-primary"></p>
+       <span class="font-semibold text-xs text-teal-500 my-1 mx-1">(03 Reviews)</span>
+        </div>
+    <h3 class="product-title text-xl font-semibold  my-3  text-secondary mb-2"></h3>
+    <div class="priceDiscount flex">
+    <p class="product-price font-bold text-xl text-teal-500"  ></p> 
+    <span class=" text-xs  font-bold text-teal-500 mx-5"> Discount(10%)</span>
+  
+   </div>
+   <div class="border-b-2 border-b-gray-200 my-3"></div>
+     <div class="categories flex">
+        <h3 class="product-title  text-lg font-semibold text-teal-500 mb-2">Categories:</h3>
+        <ul class="flex text-base mx-4 my-1">
+          <li><a  class="font-semibold"href="#">electronics, </a></li>  
+          <li><a  class="font-semibold mx-2"href="#">   jewelery </a></li>
+          
+        </ul>
+        
+    </div>
+    <div class="border-b-2 border-b-gray-200 my-3"></div>
+    <div class="AddCart   flex flex-1 justify-center  rounded-lg   my-5">
+        <div class="additem flex  flex-1  ">
+            <div class="decrement flex justify-center items-center border w-1/3 border-indigo-400">
+                <button  class=" text-secondary font-bold py-1 px-4 rounded-lg " onclick="decreaseItem()">-</button>
+            </div>
+            <div class="value flex justify-center items-center border w-1/4 border-indigo-400">
+                <p id="quantity" class="mx-6 text-lg font-semibold text-gray-700">1</p>
+            </div>
+           <div class="incerment flex justify-center items-center border w-1/3 border-indigo-400">
+            <button class=" text-secondary font-bold py-1 px-4 rounded-lg"onclick="increaseItem()">+</button>
+           </div>
+        </div>
+        <div class=" bg-red-400  flex flex-1 w-full justify-center items-center ">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p class="mx-2">Add to Cart</p>
+        </div>
+        
+        </div>
+
+        <div class="border-b-2 border-b-gray-200 my-3"></div>
+        <div class="social flex">
+            <p class="font-semibold">Share:</p>
+            <div class="icon flex space-x-5 mx-4 my-1 text-secondary ">
+                <i class="fa-brands fa-facebook  hover:text-teal-500 cursor-pointer"></i>
+                <i class="fa-brands fa-twitter  hover:text-teal-500 cursor-pointer"></i>
+                <i class="fa-brands fa-instagram  hover:text-teal-500 cursor-pointer"></i>
+                <i class="fa-brands fa-linkedin-in  hover:text-teal-500 cursor-pointer"></i>
+            </div>
+            
+        </div>
+        <div class="payment my-5">
+            <p class="font-bold">Guaranteed Safe Checkout</p>
+            <img  class="my-2"   src="assets/payment-2.webp" alt="image">
+          </div>
+    </div>
+      
+
+
+<!----------------------------top product--------------->
+    <div class="topProduct flex-1 px-4  bg-white shadow-lg rounded-lg p-6 mx-9 mt-8 ">
+        <h3 class="product-title text-xl font-bold text-center  text-teal-500 mb-2">Top Rated Products</h3>
+         <div class="product1 my-10 flex ">
+            <img  class="w-15 h-40 object-cover rounded-t-lg" src="assets/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg">
+            <div class="ratedinfo my-10 mx-5">
+                <div class="rated  flex ">
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                </div>
+                <h4 class="font-bold hover:text-teal-500">Cotton Jacket</h4>
+                <p class="text-teal-500 font-thin  ">$20<span class="ml-2 line-through text-xs  ">$30</span></p>
+            </div>
+         </div>
+         <div class="border-b-2 border-b-gray-300"></div>
+         
+         <div class="product2 my-10 flex">
+            <img  class="w-15 h-40 object-cover rounded-t-lg" src="assets/71li-ujtlUL._AC_UX679_.jpg">
+            <div class="ratedinfo my-10 mx-5">
+                <div class="rated">
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                </div>
+              <a href="#">
+                <h4 class="font-bold hover:text-teal-500"> Casual Premium</h4>
+            </a>
+                <p class="text-teal-500 font-thin">$20<span class="ml-2 line-through text-xs">$30</span></p>
+            </div>
+         </div>
+         <div class="border-b-2 border-b-gray-300"></div>
+        
+    
+ </div>
+
+
+      </div>
+    
+
+
+    </div>
+ 
+ 
+ 
+ <script src="js/details.js"></script>
+</body>
+</html>
