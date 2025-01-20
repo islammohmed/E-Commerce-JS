@@ -7,6 +7,7 @@ module.exports = {
 
         'hero': "url('/src/assets/hero.jpg')",
         'button': "url('/src/assets/button.png')",
+        'banner': "url('/src/assets/banner.png')",
       }    
     },
   },
