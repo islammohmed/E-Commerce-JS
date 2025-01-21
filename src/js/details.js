@@ -1,15 +1,15 @@
-let myhttp=new XMLHttpRequest();
+let myHttp=new XMLHttpRequest();
 let  product_id = window.location.search.split("?")[1].split("=")[1];
 function getProduct(product_id) {
-    myhttp.open("GET", `https://fakestoreapi.com/products/${product_id}`, true);
-    myhttp.addEventListener("readystatechange", function(){
-    console.log(myhttp.readyState);
-    if(myhttp.readyState == 4 && myhttp.status == 200){
-        displayProduct(JSON.parse(myhttp.response));
+    myHttp.open("GET", `https://fakestoreapi.com/products/${product_id}`, true);
+    myHttp.addEventListener("readystatechange", function(){
+    console.log(myHttp.readyState);
+    if(myHttp.readyState == 4 && myHttp.status == 200){
+        displayProduct(JSON.parse(myHttp.response));
     }
 });
 
-myhttp.send();
+myHttp.send();
 }
 getProduct(product_id);
 
@@ -80,3 +80,37 @@ function decreaseItem() {
 
 
 
+//============================================================///////////////////////////////////////
+let myhttp=new XMLHttpRequest();
+myhttp.open("GET", "https://fakestoreapi.com/products/categories", true);
+myhttp.send();
+myhttp.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    var data = JSON.parse(this.responseText);
+    console.log(data);
+    for (var i = 0; i < data.length; i++) {
+      if (data[i] === "electronics") {
+        document.getElementById("card").innerHTML += `<a href="https://google.com" target="_blank">
+      <div class="border-2 border-gray-300 rounded-lg p-4 m-4">
+            <img class="w-52 h-72" src="assets/e.png"/> 
+            <h2 class="text-center">${data[i]}</h2> </div></a>`;
+      } else if (data[i] === "jewelery") {
+        document.getElementById("card").innerHTML += `<a href="https://google.com" target="_blank">
+       <div class="border-2 border-gray-300 rounded-lg p-4 m-4"> 
+        <img class="w-52 h-72" src="assets/jew.jfif"/>
+         <h2 class="text-center">${data[i]}</h2></div></a>`;
+      } else if (data[i] === "men's clothing") {
+        document.getElementById("card").innerHTML += `<a href="https://google.com" target="_blank">
+        <div class="border-2 border-gray-300 rounded-lg p-4 m-4">
+    <img class="w-52 h-72" src="assets/men.jfif"/> 
+    <h2 class="text-center">${data[i]}</h2> </div>
+    </a>`;
+      } else if (data[i] == "women's clothing") {
+        document.getElementById("card").innerHTML += ` <a href="https://google.com" target="_blank">
+        <div class="border-2 border-gray-300 rounded-lg p-4 m-4">
+    <img class="w-52 h-72" src="assets/women.jfif"/>
+    <h2 class="text-center">${data[i]}</h2></div> </a>`;
+      }
+    }
+  }
+};
