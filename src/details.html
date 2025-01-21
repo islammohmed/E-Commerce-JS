@@ -9,12 +9,52 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="bg-gray-100">
+    <header class="flex justify-between items-center z-50 py-4 px-5 md:px-20 sticky top-0 left-0 shadow-xl bg-[#E3E6F3]">
+        <a href="index.html"> <img src="./assets/logo.svg" alt="logo" class="  w-16" /></a>
+        <div class="flex items-center">
+            <ul id="navbar" class="hidden md:flex justify-between items-center space-x-5">
+                <li class="relative">
+                    <a class="text-zinc-950 font-semibold hover:text-teal-500 transition duration-150 ease-in active:bg-teal-600" href="index.html">Home</a>
+                </li>
+                <li class="relative">
+                    <a class="text-zinc-950 font-semibold hover:text-teal-500 transition duration-300 ease-in" href="#products">product</a>
+                </li>
+  
+                <li class="relative">
+                    <a class="text-zinc-950 font-semibold hover:text-teal-500 transition duration-300 ease-in" href="/contact.html">Contact</a>
+                </li>
+                <li id="lg-bag" class="w-7 text-zinc-950 font-semibold hover:text-teal-500 transition duration-300 ease-in">
+                    <a href="cart.html"><i class="bx bx-shopping-bag"></i></a>
+                </li>
+                <li id="lg-user" class="w-7 text-zinc-950 font-semibold hover:text-teal-500 transition duration-300 ease-in">
+                    <a class="font-extrabold" href="login.html"><i class='bx bx-user'></i></a>
+                </li>
+            </ul>
+            <!-- Search Bar -->
+            <div class="relative ml-5 hidden md:block">
+                <input type="text" placeholder="Search..." class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                <button class="absolute right-0 top-0 mt-2 mr-2 text-teal-500">
+                    <i class='bx bx-search'></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Button -->
+         <div id="mobile-menu-button" class="flex items-center md:hidden">
+            <button id="bar" class="text-zinc-950">
+                <i class="bx bx-menu text-2xl"></i>
+            </button>
+            <a href="cart.html" class="ml-4"><i class="bx bx-shopping-bag text-2xl"></i></a>
+        </div> 
+    </header>
+    <div class="titledetails py-10">
+        <h1 class="text-5xl font-bold text-teal-500 text-center">Product Details</h1>
+    </div>
     
-    <div class="container flex-wrap  max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center  mt-8">
+    <div class="container flex-wrap   max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center  mt-8">
         <div class="flex flex-wrap flex-1 items-stretch mx-4">
-        <div class="product-details flex-1 px-4  bg-white shadow-lg rounded-lg mt-8 my-10 ">
-       <img class="product-image w-15 h-40 object-cover rounded-t-lg text-center mx-auto" alt="image" >
+        <div class="product-details flex-1 px-4  bg-white shadow-lg rounded-lg mt-8 my-10 hover:shadow-[20px_20px_54px_rgba(28,77,161,0.06)] hover:scale-105 ">
+       <img class="product-image  py-5 w-15 h-40 object-cover rounded-t-lg text-center mx-auto" alt="image" >
        <div class="btn flex flex-col justify-center items-center">
         <button id="next" class="next mx-10 w-1/2 h-50 bg-teal-500 text-white font-bold py-1 px-4 rounded-lg hover:bg-teal-500  my-4 text-center" >Next</button>
         <button id="previous" class="previous mx-10 w-1/2 h-50 bg-teal-500 text-white font-bold py-1 px-4 rounded-lg hover:bg-teal-500  my-2 text-center" >Previous</button> 
@@ -26,7 +66,7 @@
     
     </div>
 <!-------------------------------ADD To Card----------------->
-    <div class="Cart  flex-1 px-4   bg-white shadow-lg rounded-lg p-6 mx-9 mt-8">
+    <div class="Cart  flex-1 px-4   bg-white shadow-lg rounded-lg p-6 mx-9 mt-8 hover:shadow-[20px_20px_54px_rgba(28,77,161,0.06)] hover:scale-105">
         <div class="rateReview flex ">
         <p  id= "rate"  class="product-rating " class="font-semibold text-xs text-primary"></p>
        <span class="font-semibold text-xs text-teal-500 my-1 mx-1">(03 Reviews)</span>
@@ -34,7 +74,7 @@
     <h3 class="product-title text-xl font-semibold  my-3  text-secondary mb-2"></h3>
     <div class="priceDiscount flex">
     <p class="product-price font-bold text-xl text-teal-500"  ></p> 
-    <span class=" text-xs  font-bold text-teal-500 mx-5"> Discount(10%)</span>
+    <span class=" text-xs  font-bold text-teal-500 mx-5 my-2"> Discount(10%)</span>
   
    </div>
    <div class="border-b-2 border-b-gray-200 my-3"></div>
@@ -60,9 +100,9 @@
             <button class=" text-secondary font-bold py-1 px-4 rounded-lg"onclick="increaseItem()">+</button>
            </div>
         </div>
-        <div class=" bg-red-400  flex flex-1 w-full justify-center items-center ">
+        <div class=" bg-teal-500 text-white flex flex-1 w-full justify-center items-center hover:bg-teal-500 transition duration-150 ease-in cursor-pointer ">
             <i class="fa-solid fa-cart-shopping"></i>
-            <p class="mx-2">Add to Cart</p>
+            <p class="mx-2 ">Add to Cart</p>
         </div>
         
         </div>
@@ -87,7 +127,7 @@
 
 
 <!----------------------------top product--------------->
-    <div class="topProduct flex-1 px-4  bg-white shadow-lg rounded-lg p-6 mx-9 mt-8 ">
+    <div class="topProduct flex-1 px-4  bg-white shadow-lg rounded-lg p-6 mx-9 mt-8 hover:shadow-[20px_20px_54px_rgba(28,77,161,0.06)] hover:scale-105 ">
         <h3 class="product-title text-xl font-bold text-center  text-teal-500 mb-2">Top Rated Products</h3>
          <div class="product1 my-10 flex ">
             <img  class="w-15 h-40 object-cover rounded-t-lg" src="assets/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg">

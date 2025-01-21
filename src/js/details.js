@@ -20,13 +20,19 @@ next.addEventListener("click",function(){
     getProduct(product_id);
 });
 previous.addEventListener("click",function(){
+   if(product_id>1)
+   {
     product_id--;
     getProduct(product_id);
+   }
+   
 });
 
 function displayProduct(product)
 {
     if (product) {
+        quentity = 1; 
+        document.querySelector("#quantity").innerHTML = quentity;
         document.querySelector(".product-image").src = product.image;
         document.querySelector(".product-title").innerHTML = product.title;
         document.querySelector(".product-price").innerHTML = `$${product.price}`;
