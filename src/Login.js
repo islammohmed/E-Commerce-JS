@@ -52,7 +52,7 @@ login.addEventListener("click", (event) => {
           successMessage.classList.remove("hidden");
           successMessage.classList.add("visible");
           setTimeout(function () {
-            window.location.href = "./Login.html";
+            window.location.href = "./home.html";
           }, 2000);
         } else {
           loginIssue.innerHTML = errorMessages.auth;
