@@ -3,29 +3,16 @@ var searchTerm = document.getElementById("searchInput");
 
 var data = [];
 
+const urlParams = new URLSearchParams(window.location.search);
 
-getCategory("jewelery")
-// async function getAll(cat)
-// {
+const text = urlParams.get("category");
+console.log(text);
 
-
-//   let response= await fetch(`https://fakestoreapi.com/products/category/jewelery`)
-//  if(response.status==200)
-//  {
-//   let lastResponse =await  response.json();
-//   console.log(lastResponse);
-//  }
-//  else if(response.status==404)
-//  {
-//   console.log("notfound");
-//  }  else if(response.status==403)
-//  {
-//   console.log("forbidden");
-//  }
-
-        
-// }
-
+if (text) {
+  getCategory(text);
+} else {
+  getCategory("jewelery");
+}
 
 function getCategory(cat) {
   var https = new XMLHttpRequest();
@@ -41,7 +28,7 @@ function getCategory(cat) {
 }
 
 function displayCards(data) {
-  var categories = '';
+  var categories = "";
 
   if (data.length === 0) {
     demo.innerHTML = `
@@ -54,18 +41,18 @@ function displayCards(data) {
 
   for (var i = 0; i < data.length; i++) {
     var rating = data[i].rating.rate;
-    var stars = '';
+    var stars = "";
 
     for (let j = 0; j < Math.floor(rating); j++) {
-      stars += '★'; 
+      stars += "★";
     }
 
     if (rating % 1 !== 0) {
-      stars += '☆'; 
+      stars += "☆";
     }
 
     for (let j = stars.length; j < 5; j++) {
-      stars += '☆';
+      stars += "☆";
     }
 
     categories += `
@@ -96,7 +83,9 @@ searchTerm.addEventListener("keydown", function () {
   }
 
   var t = searchTerm.value.toLowerCase();
-  var filteredData = data.filter(item => item.title.toLowerCase().includes(t));
+  var filteredData = data.filter((item) =>
+    item.title.toLowerCase().includes(t)
+  );
 
   if (filteredData.length !== 0) {
     displayCards(filteredData);
@@ -109,8 +98,3 @@ searchTerm.addEventListener("keydown", function () {
     `;
   }
 });
-
-
-
-
-
