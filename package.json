@@ -95,13 +95,21 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+    
+  },
+  "dependencies": {
+    "init": "^0.1.2",
+    "json-server": "^1.0.0-beta.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tailwindcss -i ./src/css/input.css -o ./dist/styles.css"
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./dist/styles.css",
+    "json-server": "json-server --watch auth.json"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": ""
+
 }

@@ -16,6 +16,7 @@ mobileMenuButton.addEventListener('click', () => {
     myhttp.open("GET", "https://fakestoreapi.com/products", true);
     myhttp.send();
 
+
     function displayAllProduct(list){
         let products = ' ';
         for(let i = 0; i < list.length; i++){
