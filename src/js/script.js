@@ -20,7 +20,7 @@ mobileMenuButton.addEventListener('click', () => {
         let products = ' ';
         for(let i = 0; i < list.length; i++){
             products += `<div class="w-[30%] sm:w-1/2 md:w-[30%] lg:w-[30%] min-w-[250px] p-3 bg-white border border-[#cce7d0] rounded-[25px] cursor-pointer shadow-[20px_20px_30px_rgba(0,0,0,0.02)] my-4 transition-transform duration-300 ease-in-out relative hover:shadow-[20px_20px_54px_rgba(28,77,161,0.06)] hover:scale-105">
-                <a href="#">
+                <a href="details.html?id=${list[i].id}">
                     <img class="w-full rounded-[20px] h-80  object-contain" src="${list[i].image}" alt="${list[i].title}">
                     <div class="text-left py-2">
                         <span class="text-[#606063] text-xs">${list[i].category}</span>
