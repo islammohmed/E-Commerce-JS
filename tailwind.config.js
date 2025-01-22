@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
+
     extend: {
       fontFamily: {
         main: ["Raleway", "sans-serif"],
@@ -11,7 +12,6 @@ module.exports = {
         button: "url('/src/assets/button.png')",
         banner: "url('/src/assets/banner.png')",
       },
-    },
   },
   plugins: [],
 };
